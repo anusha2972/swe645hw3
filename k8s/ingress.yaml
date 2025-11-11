@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: survey-ingress
+  namespace: student-survey
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: survey-backend
+                port:
+                  number: 80 # Service listens on 80 (maps to container 8000)
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: survey-frontend
+                port:
+                  number: 80

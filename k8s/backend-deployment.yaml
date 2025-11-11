@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: survey-backend
+  namespace: student-survey
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: survey-backend
+  template:
+    metadata:
+      labels:
+        app: survey-backend
+    spec:
+      containers:
+        - name: survey-backend
+          image: kiran1703/survey-backend:${BUILD_NUMBER}
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: survey-backend-config
+            - secretRef:
+                name: survey-backend-secrets
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: survey-backend
+  namespace: student-survey
+spec:
+  type: NodePort
+  selector:
+    app: survey-backend
+  ports:
+    - port: 80
+      targetPort: 8000
+      nodePort: 30080
