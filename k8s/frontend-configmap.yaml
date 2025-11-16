@@ -13,6 +13,6 @@ metadata:
 data:
   runtime-config.js: |
     window.__SURVEY_CONFIG__ = {
-      apiBaseUrl: "http://54.144.74.247:30080/api",
+      apiBaseUrl: "http://54.89.180.214:30080/api",
       apiTimeoutMs: 15000,
     };

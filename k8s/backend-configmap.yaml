@@ -17,4 +17,4 @@ data:
   DB_POOL_MAX_OVERFLOW: "10"
   DB_POOL_RECYCLE: "1800"
   # Allow the frontend origin by IP (no TLS yet)
-  CORS_ORIGINS: '["http://54.144.74.247:30081"]'
+  CORS_ORIGINS: '["http://54.89.180.214:30081"]'
