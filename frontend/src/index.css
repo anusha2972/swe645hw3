@@ -1,3 +1,11 @@
+/* Team members:
+   1. Anusha Gurram – G01514835
+   2. Bala Naga Tirumala Kiran Annadata – G01508483
+   3. Yashwanth Karthikeya Settem– G01512992 */
+
+/* Sets global typography, colors, and smoothing, and applies consistent box-sizing and background styling across the whole app. */
+
+
 :root {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;

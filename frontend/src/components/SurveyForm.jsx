@@ -1,3 +1,12 @@
+// Team members:
+//  1. Anusha Gurram – G01514835
+//  2. Bala Naga Tirumala Kiran Annadata – G01508483
+// 3. Yashwanth Karthikeya Settem– G01512992
+
+// React Bootstrap form component that handles creating/updating surveys with validation, controlled inputs, and dynamic checkbox/radio logic.
+// Manages form state, errors, submit/reset actions, and displays all survey fields in a responsive layout.
+
+
 import { useEffect, useMemo, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {

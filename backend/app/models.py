@@ -1,3 +1,12 @@
+# Team members:
+# 1. Anusha Gurram – G01514835
+# 2. Bala Naga Tirumala Kiran Annadata – G01508483
+# 3. Yashwanth Karthikeya Settem– G01512992
+
+# Defines the data models for student surveys using SQLModel, including enums for specific fields and Pydantic models for create, read, and update operations.
+
+
+
 from __future__ import annotations
 
 from datetime import date, datetime
@@ -51,21 +60,7 @@ class SurveyBase(SQLModel):
     recommendation_likelihood: RecommendationLikelihood
     additional_comments: Optional[str] = Field(default=None, max_length=1000)
 
-    # @field_validator("state", mode="before")
-    # @classmethod
-    # def uppercase_state(cls, value: str) -> str:
-    #     if isinstance(value, str):
-    #         return value.upper()
-    #     return value
-
-    # @field_validator("email")
-    # @classmethod
-    # def validate_email(cls, value: str) -> str:
-    #     try:
-    #         return str(EmailStr(value))
-    #     except ValueError as exc:
-    #         raise ValueError("Invalid email address") from exc
-
+   
 
 class Survey(SurveyBase, table=True):
     __tablename__: str = "student_surveys"
@@ -107,12 +102,4 @@ class SurveyUpdate(SQLModel):
             return value.upper()
         return value
 
-    # @field_validator("email")
-    # @classmethod
-    # def validate_optional_email(cls, value: Optional[str]) -> Optional[str]:
-    #     if value is None:
-    #         return None
-    #     try:
-    #         return str(EmailStr(value))
-    #     except ValueError as exc:
-    #         raise ValueError("Invalid email address") from exc
+    

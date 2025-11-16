@@ -1,3 +1,11 @@
+/* Team members:
+   1. Anusha Gurram – G01514835
+   2. Bala Naga Tirumala Kiran Annadata – G01508483
+   3. Yashwanth Karthikeya Settem– G01512992 */
+
+/* Defines the color theme, layout, form styling, buttons, and table appearance for the survey app using GMU colors. */
+
+
 :root {
   --gmu-green: #006633;
   --gmu-yellow: #ffcc33;

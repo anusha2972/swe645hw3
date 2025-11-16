@@ -1,3 +1,11 @@
+// Team members:
+//  1. Anusha Gurram – G01514835
+//  2. Bala Naga Tirumala Kiran Annadata – G01508483
+// 3. Yashwanth Karthikeya Settem– G01512992
+
+// Handles API config, timeouts, and fetch wrappers, and provides helper functions to call survey CRUD endpoints.
+
+
 const runtimeConfig = globalThis.window?.__SURVEY_CONFIG__ ?? {};
 
 const DEFAULT_API_BASE_URL = "/api";

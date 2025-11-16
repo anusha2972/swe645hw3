@@ -1,3 +1,11 @@
+// Team members:
+//  1. Anusha Gurram – G01514835
+//  2. Bala Naga Tirumala Kiran Annadata – G01508483
+//  3. Yashwanth Karthikeya Settem – G01512992
+
+// Jenkins pipeline that builds backend/frontend, creates Docker images, pushes them to Docker Hub, and deploys updates to Kubernetes.
+
+
 pipeline {
   agent any
 

@@ -1,3 +1,10 @@
+// Team members:
+//  1. Anusha Gurram – G01514835
+//  2. Bala Naga Tirumala Kiran Annadata – G01508483
+// 3. Yashwanth Karthikeya Settem– G01512992
+
+// React component to display a list of submitted surveys in a table with options to edit or delete each survey.
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   interestSourceOptions,

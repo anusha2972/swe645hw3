@@ -1,9 +1,14 @@
-# syntax=docker/dockerfile:1.6
+# Team members:
+# 1. Anusha Gurram – G01514835
+# 2. Bala Naga Tirumala Kiran Annadata – G01508483
+# 3. Yashwanth Karthikeya Settem – G01512992
+
+# Creates the Docker image for the React frontend and serves it with Nginx.
 
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Build-time defaults (overridden at runtime by runtime-config.js served via ConfigMap)
+
 ARG VITE_API_BASE_URL=http://localhost:8000/api
 ARG VITE_API_TIMEOUT_MS=15000
 ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
@@ -17,10 +22,10 @@ RUN npm run build
 FROM nginx:1.27-alpine AS runtime
 RUN apk --no-cache add curl
 
-# Provide a secure, SPA-friendly Nginx config with a /healthz and no-cache for runtime-config.js
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Ship built assets
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80

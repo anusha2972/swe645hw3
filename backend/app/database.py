@@ -1,4 +1,9 @@
-# app/database.py
+# Team members:
+# 1. Anusha Gurram – G01514835
+# 2. Bala Naga Tirumala Kiran Annadata – G01508483
+# 3. Yashwanth Karthikeya Settem– G01512992
+
+# Manages database connections and sessions using SQLModel and SQLAlchemy.
 
 from collections.abc import Generator
 import os
@@ -26,12 +31,12 @@ def _mysql_creator():
     db = os.environ["DB_NAME"]
     port = int(os.environ.get("DB_PORT", "3306"))
 
-    # IMPORTANT: do NOT use DictCursor here, SQLAlchemy expects tuple rows.
+   
     return pymysql.connect(
         host=host,
         user=user,
         password=password,
-        database=db,  # or db=db, either is fine
+        database=db,  
         port=port,
         charset=settings.db_charset or "utf8mb4",
     )
@@ -46,13 +51,13 @@ def _build_engine() -> Engine:
     """
     engine_kwargs: dict[str, Any] = {"echo": settings.sql_echo, "pool_pre_ping": True}
 
-    # If we have DB_HOST etc, assume we're in MySQL/RDS mode
+  
     if all(os.getenv(k) for k in ["DB_HOST", "DB_USER", "DB_PASSWORD", "DB_NAME"]):
-        # Use a dummy URL (no creds here); creator handles the real connection.
+    
         database_uri = "mysql+pymysql://"
         engine_kwargs["creator"] = _mysql_creator
     else:
-        # Fallback to whatever settings says (e.g., local SQLite dev)
+        
         database_uri = settings.sqlalchemy_database_uri
         if database_uri.startswith("sqlite"):
             engine_kwargs["connect_args"] = {"check_same_thread": False}

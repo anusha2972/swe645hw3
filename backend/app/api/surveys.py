@@ -1,3 +1,11 @@
+# Team members:
+# 1. Anusha Gurram – G01514835
+# 2. Bala Naga Tirumala Kiran Annadata – G01508483
+# 3. Yashwanth Karthikeya Settem– G01512992
+
+# Defines CRUD API endpoints for surveys, including create, list, retrieve, update, and delete operations.
+# Uses FastAPI with SQLModel sessions to interact with the database and return typed responses.
+
 from datetime import datetime
 
 from typing import List, Sequence

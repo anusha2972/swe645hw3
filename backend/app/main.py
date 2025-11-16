@@ -1,3 +1,11 @@
+# Team members:
+# 1. Anusha Gurram – G01514835
+# 2. Bala Naga Tirumala Kiran Annadata – G01508483
+# 3. Yashwanth Karthikeya Settem– G01512992
+
+# Creates the FastAPI app, configures CORS, initializes the database on startup, and exposes API routes plus a health check.
+
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
