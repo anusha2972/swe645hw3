@@ -114,7 +114,7 @@ function App() {
     >
       <header className="text-center mb-5">
         <h1 className="fw-bold" style={{ color: "#134E4A" }}>
-          GMU - Student Survey 
+          Student Survey Manager
         </h1>
         <p style={{ color: "#4b5563" }}>
           Share your insights to help improve the GMU student experience!
